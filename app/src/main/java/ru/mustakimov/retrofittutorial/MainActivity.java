@@ -33,12 +33,6 @@ public class MainActivity extends AppCompatActivity {
         PostsAdapter adapter = new PostsAdapter(posts);
         recyclerView.setAdapter(adapter);
 
-        try {
-            Response response = App.getApi().getData("bash", 50).execute();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         App.getApi().getData("bash", 50).enqueue(new Callback<List<PostModel>>() {
             @Override
             public void onResponse(Call<List<PostModel>> call, Response<List<PostModel>> response) {
