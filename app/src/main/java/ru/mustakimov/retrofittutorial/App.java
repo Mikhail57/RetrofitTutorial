@@ -20,7 +20,7 @@ public class App extends Application {
         super.onCreate();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://www.umori.li/")
+                .baseUrl("https://umorili.herokuapp.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         umoriliApi = retrofit.create(UmoriliApi.class);
